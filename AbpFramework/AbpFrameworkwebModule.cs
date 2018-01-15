@@ -2,12 +2,15 @@
 using Abp.Application.Services;
 using Abp.Configuration.Startup;
 using Abp.Modules;
+using Abp.Web.Mvc;
 using Abp.WebApi;
+using AbpFramewok.Infrastructure;
 using AbpFramework.Application;
+using AbpFramework.Application.AbpFramework.Application;
 
 namespace AbpFramework
 {
-    [DependsOn(typeof(AbpWebApiModule),typeof(AbpFrameworkApplicationModule))]
+    [DependsOn(typeof(AbpWebApiModule),typeof(AbpWebMvcModule),typeof(AbpFrameworkApplicationModule),typeof(AbpFrameworkDataModule))]
     public class AbpFrameworkwebModule:AbpModule
     {
         public override void Initialize()
